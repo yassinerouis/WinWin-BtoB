@@ -7,6 +7,18 @@
 <title>Ajouter Produit</title>
 <link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" >
 </head>
+<script type="text/javascript">function fct(){
+	var x=document.getElementById("type").value;
+	if(x=="offreur"){
+		document.getElementById("offreur").style.display="block";
+		}
+	else{
+		document.getElementById("offreur").style.display="none";
+		}
+/*	else{
+		  $('#typeoffreur').css('display','none');
+		}*/
+} </script>
 <body>
 	<nav class="navbar navbar-default">
   		<div class="container-fluid">
@@ -52,12 +64,18 @@
 						</div>
 						<div class="form-group">
   <label for="sel1">Select list:</label>
-  <select class="form-control" id="type" name="type" value="${user.type}">
-    <option>Client</option>
-    <option>Offreur</option>
+  <select class="form-control" id="type" onclick="fct()" name="type" value="${user.type}">
+    <option>client</option>
+    <option>offreur</option>
    
   </select>
 </div>
+<div id="offreur" class="form-group" style="display:none">
+							<label class="control-label" for="name">Les caracteristiques offre:</label>
+							<input class="form-control" type="text" name="adresse" th:value="${user.adresse}" >
+						<span th:errors="${user.adresse}" class="text-danger"></span>
+						</div>
+
 						<button type="submit" class="btn btn-primary">Save</button>
 					</form>
 				</div>
@@ -68,4 +86,5 @@
 	</div>
 
 </body>
+
 </html> 
