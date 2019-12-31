@@ -61,7 +61,7 @@ public class User implements Serializable {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public User(int id, String nom, String prenom, String telephone, String email, String adresse, String type) {
+	public User(long id, String nom, String prenom, String telephone, String email, String adresse, String type) {
 		super();
 		this.id = id;
 		this.nom = nom;

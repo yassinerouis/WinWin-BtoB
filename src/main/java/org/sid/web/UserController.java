@@ -14,6 +14,7 @@ public class UserController {
 UserRepository userrepository;
 	@PostMapping("/saveuser")
 	public String saveUser(User user) {
+
 		userrepository.save(user);
 		return "addUser";
 	}
