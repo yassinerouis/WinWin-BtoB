@@ -4,8 +4,10 @@ import java.util.List;
 
 import org.sid.entities.Services;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.web.bind.annotation.RestController;
 
-public interface ServicesRepo extends CrudRepository<Services, Integer> {
+@RestController
+public interface ServicesRepo extends CrudRepository<Services, Long> {
 	
 	List<Services> findByType();
 	List<Services> findByRating();
