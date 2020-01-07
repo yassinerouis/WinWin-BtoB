@@ -40,7 +40,7 @@ public class MainController {
 	
 	@RequestMapping("/services")
 	public ModelAndView ajoutService(Services service){
-		ModelAndView mv = new ModelAndView("Services");
+		ModelAndView mv = new ModelAndView("addService");
 		srv.save(service);
 		return mv;
 	}
