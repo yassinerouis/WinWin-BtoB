@@ -1,4 +1,4 @@
-package org.sid.web;
+package org.sid.web.UserController;
 
 import org.sid.dao.UserRepository;
 import org.sid.entities.User;
@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class UserController {
 	@Autowired
 UserRepository userrepository;
+
 	@PostMapping("/saveuser")
 	public String saveUser(User user) {
 
@@ -24,4 +25,7 @@ UserRepository userrepository;
 		model.addAttribute("user", new User());
 		return "addUser";
 	}
+
+
+
 }
