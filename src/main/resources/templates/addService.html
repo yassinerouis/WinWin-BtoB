@@ -60,7 +60,7 @@
 					  </div>
 					  <div class="form-group">
 					    <label for="img">choisir une image</label>
-					    <input type="file" class="form-control-file" id="img">
+					    <input type="file" class="form-control-file" id="img" th:value="${service.images}">
 					  </div>
 					  <button type="submit" class="btn btn-primary">Save</button>
 					</form>
