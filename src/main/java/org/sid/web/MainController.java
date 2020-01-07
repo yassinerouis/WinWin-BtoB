@@ -44,11 +44,11 @@ public class MainController {
 	}
 	
 	@RequestMapping("/admin/services")
-	public ModelAndView Service(Services service){
+	public List<Services> Service(Services service){
 		ModelAndView mv = new ModelAndView("Services");
 		List<Services> l = (List<Services>) srv.findAll();
-		mv.addAllObjects((Map<String, ?>) l);
-		return mv;
+		
+		return l;
 	}
 	
 }
