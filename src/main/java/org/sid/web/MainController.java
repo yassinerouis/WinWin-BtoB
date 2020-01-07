@@ -4,9 +4,11 @@ import java.util.List;
 import java.util.Map;
 
 import org.sid.dao.ServicesRepo;
+import org.sid.dao.Type_ServiceRepository;
 import org.sid.dao.UserRepository;
 import org.sid.entities.Services;
 import org.sid.entities.User;
+import org.sid.entities.type_services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -50,5 +52,19 @@ public class MainController {
 		
 		return l;
 	}
-	
+	@Autowired
+	Type_ServiceRepository serviceRepository;
+
+	@GetMapping("/service")
+	public String formulaireAjoutService(Model model) {
+		model.addAttribute("service", new type_services());
+		return "addTypeService";
+	}
+
+	@PostMapping("/saveService")
+	public String saveService(type_services service) {
+		serviceRepository.save(service);
+		return "addTypeService";
+	}
+
 }

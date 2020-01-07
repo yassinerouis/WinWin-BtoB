@@ -1,5 +1,5 @@
 package org.sid.web.ServiceController;
-import org.sid.dao.ServiceRepository;
+import org.sid.dao.Type_ServiceRepository;
 import org.sid.entities.type_services;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,21 +8,21 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-@Controller
+/*@Controller
 public class Type_ServiceController {
     @Autowired
-    ServiceRepository serviceRepository;
+    Type_ServiceRepository serviceRepository;
 
     @GetMapping("/service")
     public String formulaireAjoutService(Model model) {
         model.addAttribute("service", new type_services());
-        return "addService";
+        return "addTypeService";
     }
 
     @PostMapping("/saveService")
     public String saveService(type_services service) {
         serviceRepository.save(service);
-        return "addService";
+        return "addTypeService";
     }
 
 
@@ -46,4 +46,3 @@ public class Type_ServiceController {
     }
 
 }*/
-}

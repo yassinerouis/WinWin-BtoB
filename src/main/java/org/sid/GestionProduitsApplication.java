@@ -16,8 +16,7 @@ import javax.servlet.MultipartConfigElement;
 
 @SpringBootApplication
 @ComponentScan({"org.sid"})
-@EnableAutoConfiguration
-@Configuration
+
 public class GestionProduitsApplication {
 	 HttpSecurity http;
 	 
