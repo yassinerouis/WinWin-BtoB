@@ -9,6 +9,10 @@ import javax.persistence.Id;
 import javax.validation.constraints.Size;
 @Entity
 public class User implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id @GeneratedValue
 	Long id;
 	@Size(min = 3, max =30 )
