@@ -1,8 +1,65 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter Service</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" >
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" th:href="@{/index}">IRISI_APP</a>
+            <a><form th:action="@{/logout}" method="post"></form>
+                <input type="submit" value="Se deconnecter">
+            </a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a th:href="@{/index}">Home</a></li>
+            <li><a th:href="@{/formService}">Services</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div layout:fragment="content1">
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">Ajouter un Service</div>
+            <div class="panel-body">
+                <form th:action="@{/saveService}"  th:object="${service}" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label class="control-label" for="nom">Nom du service :</label>
+                        <input class="form-control" type="text" name="nom"  th:value="${service.nom}" id="nom" >
+                        <span class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="image">image :</label>
+
+                        <input class="form-control"  name="image"  th:value="${service.image}"  id="image" >
+                        <span class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+=======
+>>>>>>> b1a8700e4ea31839d69648f14a685228d018e1d5
 <html xmlns:th="http://www.thymeleaf.org" 
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	  layout:decorate="layout">
 <head>
+<<<<<<< HEAD
 <meta charset="UTF-8">
 <title>Ajouter TYPE SERVICE</title>
 <link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" >
@@ -48,3 +105,73 @@
 </body>
 
 </html> 
+=======
+	<meta charset="UTF-8">
+	<title>Services</title>
+	<link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" >
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+   <!-- our navigation menu -->
+	<nav class="navbar navbar-default">
+  		<div class="container-fluid">
+    	<div class="navbar-header">
+      		<a class="navbar-brand" th:href="@{/index}">IRISI_APP</a>
+    	</div>
+    	<ul class="nav navbar-nav">
+      		<li class="active"><a th:href="@{/index}">Home</a></li>
+      		<li><a th:href="@{/formProduit}">Produit</a> </li>
+    	</ul>
+  		</div>
+	</nav>
+
+    <div layout:fragment="content1">
+		<div class="col-md-6">	
+			<div class="panel panel-default">
+				<div class="panel-heading"> Service</div>
+				<div class="panel-body">
+					<form th:action="@{/services}" method="POST">
+					  <div class="form-group">
+						<label class="control-label" for="adresse">le locale :</label>
+						<input class="form-control" type="text" name="adresse" th:value="${service.adress}" id="adresse" >
+						<span th:errors="${service.adress}" class="text-danger"></span>
+					 </div>
+					 <div class="form-group">
+						<label class="control-label" for="contact">Contact :</label>
+						<input class="form-control" type="text" name="contact" th:value="${service.contact}" id="contact" >
+						<span th:errors="${service.contact}" class="text-danger"></span>
+					 </div>	
+					  <div class="form-group">
+					    <label for="exampleFormControlSelect1">Type de service :</label>
+					    <select class="form-control" id="exampleFormControlSelect1">
+					      <option>1</option>
+					      <option>2</option>
+					      <option>3</option>
+					      <option>4</option>
+					      <option>5</option>
+					    </select>
+					  </div>
+					  <div class="form-group">
+					    <label for="desc">Description :</label>
+					    <textarea class="form-control" id="desc" rows="3"></textarea>
+					  </div>
+					  <div class="form-group">
+					     <label>Nombres stars :</label>
+					     <input id="input-1" name="input-1" class="rating rating-loading" data-min="0" data-max="5" data-step="0.1" value="2">
+					  </div>
+					  <div class="form-group">
+					    <label for="img">choisir une image</label>
+					    <input type="file" class="form-control-file" id="img" th:value="${service.images}">
+					  </div>
+					  <button type="submit" class="btn btn-primary">Save</button>
+					</form>
+		        </div>
+		     </div>
+		    </div>
+		  </div>        			
+	</body>
+>>>>>>> 3c26cc5c4f589393d4120cc9d652eaa24277ff19
+</html>
+>>>>>>> b1a8700e4ea31839d69648f14a685228d018e1d5

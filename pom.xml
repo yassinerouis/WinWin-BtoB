@@ -52,16 +52,21 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+<<<<<<< HEAD
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+=======
+
+>>>>>>> b1a8700e4ea31839d69648f14a685228d018e1d5
 
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-devtools</artifactId>
 			</dependency>
+<<<<<<< HEAD
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-mail</artifactId>
@@ -76,6 +81,9 @@
     <artifactId>spring-context-support</artifactId>
     <version>4.0.5.RELEASE</version>
 </dependency>
+=======
+
+>>>>>>> b1a8700e4ea31839d69648f14a685228d018e1d5
 	</dependencies>
 
 	<build>

@@ -1,6 +1,10 @@
 package org.sid.entities;
 
 import java.io.Serializable;
+<<<<<<< HEAD
+=======
+
+>>>>>>> b1a8700e4ea31839d69648f14a685228d018e1d5
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +18,7 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id @GeneratedValue
 	Long id;
+<<<<<<< HEAD
 	
 	String nom;
 	
@@ -24,6 +29,17 @@ public class User implements Serializable {
 	String email;
 	String password;
 	
+=======
+	@Size(min = 3, max =30 )
+	String nom;
+	@Size(min = 3, max =30 )
+	String prenom;
+	@Column(length=12)
+	String telephone;
+	@Size(min = 10, max =30 )
+	String email;
+	@Size(min = 10, max =100 )
+>>>>>>> b1a8700e4ea31839d69648f14a685228d018e1d5
 	String adresse;
 	
 	String type;
@@ -36,6 +52,7 @@ public class User implements Serializable {
 	public String getNom() {
 		return nom;
 	}
+<<<<<<< HEAD
 	public String getPassword() {
 		return password;
 	}
@@ -54,6 +71,8 @@ public class User implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+=======
+>>>>>>> b1a8700e4ea31839d69648f14a685228d018e1d5
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
@@ -83,7 +102,20 @@ public class User implements Serializable {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+<<<<<<< HEAD
 	
+=======
+	public User(long id, String nom, String prenom, String telephone, String email, String adresse, String type) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.telephone = telephone;
+		this.email = email;
+		this.adresse = adresse;
+		this.type = type;
+	}
+>>>>>>> b1a8700e4ea31839d69648f14a685228d018e1d5
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
