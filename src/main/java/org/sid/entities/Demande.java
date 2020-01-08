@@ -21,8 +21,8 @@ public class Demande implements Serializable {
 			super();
 			// TODO Auto-generated constructor stub
 		}
-		@OneToOne(fetch = FetchType.LAZY, optional = false)
-		@JoinColumn(name = "type_id", nullable = false)
+		@OneToOne(fetch = FetchType.LAZY, optional = true)
+		@JoinColumn(name = "type_id", nullable = true)
 		TypeService type;
 		
 		public Demande(Long id, String objet, String description) {
@@ -40,6 +40,12 @@ public class Demande implements Serializable {
 		}
 		public String getDescription() {
 			return Description;
+		}
+		public TypeService getType() {
+			return type;
+		}
+		public void setType(TypeService type) {
+			this.type = type;
 		}
 		public void setDescription(String description) {
 			Description = description;

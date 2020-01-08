@@ -188,10 +188,12 @@
 
   <!-- Card image -->
   <div class="view view-cascade overlay">
-    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Slides/img%20(70).jpg" alt="Card image cap">
+  <div col-md-2></div>
+   <center> <img class="card-img-top" src="/img/downtown-690827_1280.jpg" alt="Card image cap"></center>
     <a href="#!">
       <div class="mask rgba-white-slight"></div>
     </a>
+    
   </div>
 
   <!-- Card content -->
@@ -256,10 +258,10 @@ $(document).ready(function(){
 </script>
 
 <div class="container">
-  <h2>Demander le service</h2>
+ <center> <h2>Demander le service</h2>
   <!-- Trigger the modal with a button -->
   <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Ici</button>
-
+</center>
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
@@ -271,11 +273,10 @@ $(document).ready(function(){
           <h4 class="modal-title">Demander</h4>
         </div>
         <div class="modal-body">
-        <form action="/addDemande" method="post"> 
+        <form th:action="@{/user/addDemande}" method="POST">
           <div class="form-group">
 							<label class="control-label" for="name">Objet :</label>
 							<input class="form-control" type="text" name="objet" id="objet" >
-					
 						</div>
 						<div class="form-group">
   <label for="exampleFormControlTextarea1">Description:</label>

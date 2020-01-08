@@ -2,7 +2,7 @@ package org.sid.web;
 
 import java.util.List;
 
-
+import org.sid.dao.DemandeRepository;
 import org.sid.dao.ServicesRepo;
 import org.sid.dao.Type_ServiceRepository;
 import org.sid.dao.UserRepository;
@@ -10,11 +10,14 @@ import org.sid.entities.Services;
 import org.sid.entities.TypeService;
 import org.sid.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 
@@ -27,13 +30,14 @@ public class MainController {
 	ServicesRepo srv;
 	@Autowired
 	Type_ServiceRepository servicetype;
+	
 	@PostMapping("/saveuser")
 	public String saveUser(User user) {
 		userrepository.save(user);
 		return "addUser";
 	}
 	
-	@GetMapping("/r")
+	@PostMapping("/user/r")
 	public String formulaireAjout(Model model) {
 		model.addAttribute("user", new User());
 		return "addUser";
@@ -43,7 +47,7 @@ public class MainController {
 		
 		return "index";
 	}
-	@GetMapping("/login")
+	@RequestMapping("/login")
 	public String login() {
 		
 		return "login";

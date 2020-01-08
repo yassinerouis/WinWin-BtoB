@@ -11,7 +11,7 @@ public class TypeService implements Serializable {
 	private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue
-    Long id;
+    int id;
 
     String nom;
 
@@ -20,11 +20,11 @@ public class TypeService implements Serializable {
 
 
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -50,7 +50,7 @@ public class TypeService implements Serializable {
         super();
         // TODO Auto-generated constructor stub
     }
-    public TypeService(Long id, String nom, String image) {
+    public TypeService(int id, String nom, String image) {
         super();
         this.id=id;
         this.nom=nom;
