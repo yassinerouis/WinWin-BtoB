@@ -30,6 +30,10 @@ public class MainController {
 	ServicesRepo srv;
 	@Autowired
 	Type_ServiceRepository servicetype;
+	@Autowired
+    public JavaMailSender emailSender;
+	@Autowired
+	DemandeRepository demande;
 	
 	@PostMapping("/saveuser")
 	public String saveUser(User user) {
@@ -37,7 +41,7 @@ public class MainController {
 		return "addUser";
 	}
 	
-	@PostMapping("/user/r")
+	@GetMapping("/r")
 	public String formulaireAjout(Model model) {
 		model.addAttribute("user", new User());
 		return "addUser";
