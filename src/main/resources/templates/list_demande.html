@@ -2,58 +2,122 @@
 <html xmlns:th="http://www.thymeleaf.org" 
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	  layout:decorate="layout">
+
 <head>
-  <title>Demandes</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <style type="text/css">
-  	.media{
+	<title>Services</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+	<style type="text/css">
+  .navbar {
+    font-family: Montserrat, sans-serif;
+    margin-bottom: 0;
+    background-color: #2d2d30;
+    border: 0;
+    font-size: 11px !important;
+    letter-spacing: 4px;
+    opacity: 0.9;
+  }
+  .navbar li a, .navbar .navbar-brand { 
+    color: #d5d5d5 !important;
+  }
+  .navbar-nav li a:hover {
+    color: #fff !important;
+  }
+  .navbar-nav li.active a {
+    color: #fff !important;
+    background-color: #29292c !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+  }
+  .media{
   		border: solid 1px;
   		padding: 10px;
   		border-radius: 3px;
   		box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 12px 0 rgba(0, 0, 0, 0.19);
   	}
   	.btn{
-  		left: 850px;
+  		left: 520px;
   		border-radius: 0px;
   	}
   	button{
   		position: relative;
   	}
+  	.main_img{
+  		width: 100%;
+  		margin: 50px 0px 0px 0px;
+  	}
+  	.jumbotron{
+  		text-align: center;
+  	}
   
-  </style>
-  
+	</style>
 </head>
 <body>
-    <!-- our navigation menu -->
-	<nav class="navbar navbar-default">
-  		<div class="container-fluid">
-    	<div class="navbar-header">
-      		<a class="navbar-brand" th:href="@{/index}">IRISI_APP</a>
-    	</div>
-    	<ul class="nav navbar-nav">
-      		<li class="active"><a th:href="@{/index}">Home</a></li>
-      		<li><a th:href="@{/formProduit}">Produit</a></li>
-    	</ul>
-  		</div>
-	</nav>
-
-	<div class="container">
-	  <!-- Left-aligned media object -->
-	  <div class="media">
-	    <div class="media-left">
-	      <img src="img_avatar1.png" class="media-object" style="width:90px">
+	<nav class="navbar navbar-default navbar-fixed-top">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>                        
+	      </button>
+	      <a class="navbar-brand" href="#myPage">Logo</a>
 	    </div>
-	    <div class="media-body">
-	      <h4 class="media-heading">Left-aligned</h4>
-	      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-	      <button type="button" class="btn btn-danger">plus ... </button>
+	    <div class="collapse navbar-collapse" id="myNavbar">
+	      <ul class="nav navbar-nav navbar-right">
+	        <li><a href="#myPage">HOME</a></li>
+	        <li><a href="#band">Services</a></li>
+	        <li><a href="#tour">Offre</a></li>
+	        <li><a href="#contact">CONTACT</a></li>
+	        <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+	        <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+	      </ul>
 	    </div>
 	  </div>
-  	<hr>
+	</nav>
+
+	<div  class="slide">
+	    <img src="../static/img/hotel.jpg" alt="" class="main_img">
+	</div>
+	<div class="jumbotron">
+	    <h1>ce que vous cherchez, est la</h1>      
+	    <p>Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile-first projects on the web.</p>
     </div>
+
+	<div class="container-fluid">
+		<div class="row">
+		    <!-- sidebar -->
+			<div class="col-md-4">
+				 <div class="list-group">
+				  <a href="#" class="list-group-item active"> <span class="glyphicon glyphicon-home"></span>   HOME</a>
+				  <a href="#" class="list-group-item">   <span class="glyphicon glyphicon-plus"> </span> Déposer un offre</a>
+				  <a href="#" class="list-group-item"> <span class="glyphicon glyphicon-pushpin"> </span> Consulter vous transaction </a>
+				  <a href="#" class="list-group-item"> <span class="glyphicon glyphicon-option-horizontal"> </span> A propos </a>
+				  <a href="#" class="list-group-item"> <span class="glyphicon glyphicon-log-out"> </span> Déconnécter </a>
+				 </div> 
+			</div>
+		    <div class="col-md-7">
+				  <!-- Left-aligned media object -->
+				  <div class="media">
+				    <div class="media-left">
+				      <img src="img_avatar1.png" class="media-object" style="width:90px">
+				    </div>
+				    <div class="media-body">
+				      <h4 class="media-heading">Left-aligned</h4>
+				      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				      <button type="button" class="btn btn-danger">plus ... </button>
+				    </div>
+				  </div>
+			      <hr>
+			</div>
+		</div>
+		  
+	</div>
+
 </body>
+
 </html>
